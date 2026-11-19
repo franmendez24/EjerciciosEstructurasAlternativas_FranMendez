@@ -6,8 +6,6 @@ dia = int(input("Introduce el día: "))
 mes = int(input("Introduce el mes: "))
 año = int(input("Introduce el año: "))
 
-bisiesto = (año % 4 == 0 and año % 100 != 0) or año % 400 == 0
-
 fecha_correcta = True
 
 if año < 1 or mes < 1 or mes > 12 or dia < 1:
@@ -17,11 +15,6 @@ else:
         dias_mes = 31
     elif mes in (4, 6, 9, 11):
         dias_mes = 30
-    else:  # febrero
-        if bisiesto:
-            dias_mes = 29
-        else:
-            dias_mes = 28
 
     if dia > dias_mes:
         fecha_correcta = False
